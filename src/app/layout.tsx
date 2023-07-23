@@ -3,6 +3,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 
+/*
+
+ // Import bootstrap when download with node package manager (YARN,NPM,PNPM)
+ import "bootstrap/dist/css/bootstrap.css"
+
+*/
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning={true} lang="en">
       <head>
+        {/* Bootstrap css CDN link */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -26,6 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>{children}</body>
+        {/* bootstrap JavaScript CDN link */}      
       <Script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -37,6 +46,7 @@ export default function RootLayout({
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossOrigin="anonymous"
       />
+
     </html>
   );
 }
