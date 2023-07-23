@@ -17,4 +17,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Note
-Remove the `output: "export"` configuration; it is only important when you deploy the Next.js app router on GitHub pages.  
+Remove the  `output: "export"` configuration in `next.config.js` file; it is only important when you deploy the Next.js app router on GitHub pages.  
